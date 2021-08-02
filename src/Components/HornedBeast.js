@@ -18,8 +18,8 @@ class HornedBeast extends React.Component {
   render() {
     return (
       <div>
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={this.props.img} alt={this.props.title} />
+        <Card className="mb-3" style={{ width: '18rem' }}>
+          <Card.Img variant="top" src={this.props.img} alt={this.props.title} style={{ width: '286px', height: '180px' }} />
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
             <Card.Text>{this.props.description}</Card.Text>
