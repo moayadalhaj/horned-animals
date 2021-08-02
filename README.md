@@ -39,6 +39,14 @@ Create state inside of the HornedBeast component that keeps track of the number 
 
 Put a heart in each horned beast with the number of times it was “favorited” next to it.
 
+Estimate of time needed to complete: 1 hour
+
+Start time: 5:30
+
+Finish time: 6:00
+
+Actual time needed to complete: 30 minutes
+
 # Feature 3: Bootstrap
 
 Why are we implementing this feature?
@@ -57,10 +65,10 @@ How are we implementing it?
 
 Bring in the react-bootstrap library and use it to style your application making sure that it is responsive.
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 2
 
-Start time: _____
+Start time: 9:00
 
-Finish time: _____
+Finish time: 11:30
 
-Actual time needed to complete: _____
+Actual time needed to complete: 2:30
