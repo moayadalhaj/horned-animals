@@ -1,8 +1,7 @@
 import React from 'react';
 import HornedBeast from './HornedBeast';
 import data from '../data.json';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Navbar, Nav, Container, Row, Col, Form, FormControl, Button } from 'react-bootstrap';
 
 class Main extends React.Component {
   render() {
@@ -16,12 +15,35 @@ class Main extends React.Component {
     });
     return (
       <main>
-        <Row xs="1" md="2" xl="3" xxl="4" className="d-flex justify-content-center">
-          {arrayElements}
-        </Row>
+        <Container>
+          <Navbar bg="light" expand="lg">
+            <Navbar.Toggle aria-controls="navbarScroll" />
+            <Navbar.Collapse id="navbarScroll">
+              <Nav
+                className="mr-auto my-2 my-lg-0"
+                style={{ maxHeight: '100px' }}
+                navbarScroll>
+              </Nav>
+              <Form className="d-flex">
+                <FormControl
+                  type="search"
+                  placeholder="Search"
+                  className="mr-2"
+                  aria-label="Search"
+                />
+                <Button variant="outline-success">Search</Button>
+              </Form>
+            </Navbar.Collapse>
+          </Navbar>
+          <Row>
+            {arrayElements}
+          </Row>
+        </Container>
       </main >
     );
   }
 }
 
 export default Main;
+// className='justify-content-center d-flex'
+// style={{ flexWrap: 'wrap' }}
