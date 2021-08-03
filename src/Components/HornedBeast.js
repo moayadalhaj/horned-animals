@@ -18,12 +18,12 @@ class HornedBeast extends React.Component {
   render() {
     return (
       <div>
-        <Card className="mb-3" style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={this.props.img} alt={this.props.title} style={{ width: '286px', height: '180px' }} />
+        <Card className="mb-3" style={{ width: '18rem', height: '350px' }}>
+          <Card.Img variant="top" onClick={this.countVote} src={this.props.img} alt={this.props.title} style={{ width: '286px', height: '180px' }} />
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
             <Card.Text>{this.props.description}</Card.Text>
-            <Button variant="primary" onClick={this.countVote}>{this.state.votes} ❤️</Button>
+            <Button variant="primary">{this.state.votes} ❤️</Button>
           </Card.Body>
         </Card>
       </div>
