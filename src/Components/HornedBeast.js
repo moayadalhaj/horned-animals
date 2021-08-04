@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import SelectedImage from './SelectedImage';
+import SelectedBeast from './SelectedBeast';
 
 class HornedBeast extends React.Component {
   constructor() {
@@ -34,7 +34,7 @@ class HornedBeast extends React.Component {
             <Button variant="primary" onClick={this.countVote}>{this.state.votes} ❤️</Button>
           </Card.Body>
         </Card>
-        <SelectedImage img={this.props.img}
+        <SelectedBeast img={this.props.img}
           title={this.props.title}
           description={this.props.description}
           votes={this.state.votes}
