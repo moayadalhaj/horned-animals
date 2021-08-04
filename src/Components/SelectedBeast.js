@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
-class SelectedImage extends React.Component {
+class SelectedBeast extends React.Component {
   render() {
     return (
       <Modal show={this.props.show} onHide={this.props.handleClose} >
@@ -24,4 +24,4 @@ class SelectedImage extends React.Component {
   }
 }
 
-export default SelectedImage;
+export default SelectedBeast;

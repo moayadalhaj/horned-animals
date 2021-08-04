@@ -4,8 +4,33 @@ import data from '../data.json';
 import { Navbar, Nav, Container, Row, Col, Form, FormControl, Button } from 'react-bootstrap';
 
 class Main extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataArray: data,
+      renderData: data
+    };
+  }
+
+  selectionForm(e) {
+    e.preventDefault();
+    let dataArr = this.state.dataArray;
+    if (e.target.value) {
+      dataArr = this.state.dataArray.filter(element => {
+        if (parseInt(e.target.value) === element.horns)
+          return element;
+      });
+    } else {
+      dataArr = this.state.dataArray;
+    }
+    this.setState({
+      renderData: dataArr
+    });
+  }
+
   render() {
-    let arrayElements = data.map(element => {
+    let arrayElements = this.state.renderData.map(element => {
       return <Col><HornedBeast img={element.image_url}
         title={element.title}
         description={element.description}
@@ -16,25 +41,13 @@ class Main extends React.Component {
     return (
       <main>
         <Container>
-          <Navbar bg="light" expand="lg">
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
-              <Nav
-                className="mr-auto my-2 my-lg-0"
-                style={{ maxHeight: '100px' }}
-                navbarScroll>
-              </Nav>
-              <Form className="d-flex">
-                <FormControl
-                  type="search"
-                  placeholder="Search"
-                  className="mr-2"
-                  aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-              </Form>
-            </Navbar.Collapse>
-          </Navbar>
+          <Form.Select aria-label="Default select example" onChange={(e) => { this.selectionForm(e); }} className="mx-auto mb-3 rounded bg-secondary " style={{ maxWidth: '400px', color: '#fff' }}>
+            <option value="">Selct Number Of Horns</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="100">One hundred</option>
+          </Form.Select>
           <Row>
             {arrayElements}
           </Row>
